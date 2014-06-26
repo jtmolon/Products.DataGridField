@@ -10,7 +10,8 @@
 <body>
     <!-- VIEW -->
     <metal:view_cell_macro define-macro="view_cell">
-        <div tal:content="cell_value" />
+        <div tal:define="display_value python: '\n'.join(cell_value or [])" 
+             tal:content="display_value" />
     </metal:view_cell_macro>
 
 
